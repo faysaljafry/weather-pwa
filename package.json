@@ -192,7 +192,7 @@
     "yallist": "^4.0.0"
   },
   "scripts": {
-    "start": "node src/app.js"
+    "start": "./node_modules/nodemon/bin/nodemon.js src/app.js"
   },
   "keywords": [],
   "author": "",

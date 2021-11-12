@@ -17,8 +17,7 @@ const __dirname = path.resolve();
 //hello world testing
 
 const MongoClient = mongo.MongoClient;
-// const uri = process.env.MONGO_URI;
-const uri = `mongodb+srv://faysaljafry:faisal0341!@vuejs.yelyi.mongodb.net/vueJS?retryWrites=true&w=majority`;
+const uri = process.env.MONGO_URI;
 var client;
 
 var mongoClient = new MongoClient(uri, {

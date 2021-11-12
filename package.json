@@ -118,7 +118,6 @@
     "negotiator": "^0.6.2",
     "node-cron": "^3.0.0",
     "node-fetch": "^3.0.0",
-    "nodemon": "^2.0.14",
     "nopt": "^1.0.10",
     "normalize-path": "^3.0.0",
     "normalize-url": "^4.5.1",
@@ -197,5 +196,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }

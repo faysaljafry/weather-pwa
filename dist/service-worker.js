@@ -1,3 +1,4 @@
+
 if (!self.define) {
   const e = (e) => {
       'require' !== e && (e += '.js');
@@ -121,4 +122,4 @@ define('./service-worker.js', ['./workbox-543be79b'], function (e) {
       {}
     );
 });
-//# sourceMappingURL=service-worker.js.map
+

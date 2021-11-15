@@ -13,11 +13,14 @@ import cron from 'node-cron';
 import fetch from 'node-fetch';
 import path from 'path';
 import serveStatic from 'serve-static';
+
 const __dirname = path.resolve();
 //hello world testing
 
 const MongoClient = mongo.MongoClient;
 const uri = process.env.MONGO_URI;
+// const uri =
+//   'mongodb+srv://faysaljafry:faisal0341!@vuejs.yelyi.mongodb.net/vueJs?retryWrites=true&w=majority';
 var client;
 
 var mongoClient = new MongoClient(uri, {
@@ -110,31 +113,6 @@ app.use('/', serveStatic(path.join(__dirname, '/dist')));
 app.get(/.*/, function (req, res) {
   res.sendFile(path.join(__dirname, '/dist/index.html'));
 });
-
-function democron() {
-  console.log('Running Crone Job...');
-  setTimeout(() => {
-    fetch(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=31.52&lon=74.35&appid=db225a9416a485c121752c8f2876d298`
-    )
-      .then((response) => response.json())
-      .then((result) => {
-        console.log('deleting for lahore');
-        let collection = client.db('vueJs').collection('weather');
-        try {
-          let city = collection.find(
-            { 'title.city': 'Lahore' }
-            // {
-            //   'title.daily': { $slice: 1 },
-            // }
-          );
-          console.log(city);
-        } catch (err) {
-          console.log(err);
-        }
-      });
-  }, 1000);
-}
 
 cron.schedule(' * 2 * * *', async () => {
   console.log('Running Crone Job...');
